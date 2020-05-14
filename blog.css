@@ -386,7 +386,7 @@ a:visited:hover {
   font-size: 1.8em;
   line-height: 1.8em;
   padding: 2em 10.9% 2.5em 10.9%;
-  border-top: 1px dashed #444;
+  border-top: 2px solid #c8cfea;
 }
 .baseLinks a {
   display: inline-block;
@@ -428,7 +428,7 @@ a:visited:hover {
   margin-right: 0.6em;
   margin-bottom: 0.1em;
   background-color: transparent;
-  background-image: url("resources/left-arrow-white.svg");
+  background-image: url("resources/double-arrow-white-points-left.svg");
   background-position: 0 2px;
   background-size: 100% auto;
   background-repeat: no-repeat;
