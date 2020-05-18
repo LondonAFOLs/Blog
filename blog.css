@@ -63,6 +63,14 @@ a:visited:hover {
   padding: 0;
   margin: 0 0 12px 0;
 }
+.header .headerTitleArea h1 a {
+  color: #010f67;
+  text-decoration: none;
+}
+.header .headerTitleArea h1 a:hover {
+  color: #010f67;
+  text-decoration: none;
+}
 .header .logo {
   display: block;
   position: absolute;
