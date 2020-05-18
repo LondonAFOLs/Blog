@@ -37,83 +37,31 @@ a:visited:hover {
   color: #021799;
 }
 .breadcrumb {
-  float: left;
-  width: 100%;
-  border-bottom: #010f67;
-  background: #021799 url('resources/breadcrumb-bg.png') left center repeat-x;
-  line-height: 1.8em;
-  position: relative;
-}
-.breadcrumb ul {
-  display: block;
-  float: left;
-  width: auto;
-  margin: 0px;
-  padding: 0px;
-  border-right: 2px solid #a6b3ff;
-  list-style-type: none;
-}
-.breadcrumb ul li {
-  display: inline;
-  margin: 0px;
-  padding: 0px;
-  font-size: 0.9em;
-  font-weight: 600;
-}
-.breadcrumb a {
-  display: inline-block;
-  float: left;
-  padding: 3px 40px 6px 25px;
-  margin: 0px 0px 0px -35px;
-  color: #c8cfea;
-  text-decoration: none;
-  background: transparent url('resources/breadcrumb.png') left center no-repeat;
-  height: 1.9em;
-}
-.breadcrumb a:hover {
-  color: #ffd8d9;
-  background: transparent url('resources/breadcrumb-hilite.png') left center no-repeat;
-  height: 1.9em;
-}
-.breadcrumb a.home {
-  display: inline-block;
-  float: left;
-  padding: 3px 40px 6px 10px;
-  margin: 0px;
-  color: #c8cfea;
-  background: transparent url('resources/breadcrumb-bg.png') left center repeat-x;
-  height: 1.9em;
-}
-.breadcrumb a:hover.home {
-  color: #ffd8d9;
-  background: transparent url('resources/breadcrumb-hilite-bg.png') left center repeat-x;
-  height: 1.9em;
-}
-.breadcrumb a:visited:hover {
-  color: #ffd8d9;
-}
-.breadcrumb .current {
-  display: inline-block;
-  float: left;
-  padding: 3px 15px 6px 25px;
-  margin: 0px 0px 0px -35px;
-  color: white;
-  font-weight: 600;
-  background: transparent url('resources/breadcrumb-current.png') left center no-repeat;
-  height: 1.9em;
+  display: none;
 }
 .header {
+  border-top: 2px solid #021799;
   height: 200px;
   position: relative;
   clear: both;
   background-color: #FFF;
-  border-bottom: 2px solid #c8cfea;
 }
 .header .headerContent {
   position: relative;
   margin: 0 10.9%;
   max-width: 1024px;
-  text-align: right;
+  text-align: left;
+}
+.header .headerTitleArea {
+  margin-left: 230px;
+  padding-top: 82px;
+}
+.header .headerTitleArea h1 {
+  color: #010f67;
+  font-weight: normal;
+  font-size: 2.2em;
+  padding: 0;
+  margin: 0 0 12px 0;
 }
 .header .logo {
   display: block;
@@ -128,53 +76,23 @@ a:visited:hover {
   background-color: transparent;
   background-size: 208px 132px;
 }
-.header .headerMenu {
-  left: 240px;
-  top: 58px;
-  position: absolute;
-  display: block;
-  width: 600px;
-  height: 200px;
-  overflow: hidden;
-  text-align: left;
-}
-.header .headerMenu a {
-  color: #021799;
-  font-size: 1.2em;
-  text-decoration: none;
-  display: inline-block;
-  padding-right: 22px;
-  background-color: transparent;
-  background-position: right top;
-  background-repeat: no-repeat;
-  margin: 0 0 8px 0;
-}
-.header .headerMenu a:hover {
-  color: #0528fc;
-  text-decoration: none;
-}
-.header .headerMenu a.flickrGalleries {
-  padding-right: 12px;
-  border-right: 2px solid #7e89cb;
-}
-.header .headerMenu a.rssFeed {
-  padding-left: 8px;
-}
-.header .headerMenu h1 {
-  color: #010f67;
-  font-weight: normal;
-  font-size: 3em;
-  padding: 0;
-  margin: 0 0 12px 0;
-}
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .header .logo {
     background-image: url("resources/logo-440x264.png");
   }
 }
 @media screen and (max-width: 770px) and (min-width: 620px) {
-  .header .headerMenu h1 {
-    font-size: 2.3em;
+  .header .logo {
+    width: 168px;
+    height: 101px;
+    background-size: 168px 101px;
+  }
+  .header .headerTitleArea {
+    margin-left: 186px;
+    padding-top: 70px;
+  }
+  .header .headerTitleArea h1 {
+    font-size: 1.6em;
     margin: 0 0 6px 0;
   }
 }
@@ -194,23 +112,171 @@ a:visited:hover {
     background-size: 104px 66px;
     background-image: url("resources/logo-110x66.png");
   }
-  .header .headerMenu {
-    left: 120px;
-    top: 20px;
-    width: 300px;
+  .header .headerTitleArea {
+    margin-left: 122px;
+    padding-top: 38px;
   }
-  .header .headerMenu a {
-    font-size: 0.9em;
+  .header .headerTitleArea h1 {
+    font-size: 1.4em;
     margin: 0 0 4px 0;
   }
-  .header .headerMenu h1 {
-    font-size: 2em;
+  .header .headerContent a {
+    font-size: 0.9em;
     margin: 0 0 4px 0;
   }
 }
 @media screen and (max-width: 620px) and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .header .logo {
     background-image: url("resources/logo-220x132.png");
+  }
+}
+.mainMenuDivider {
+  border-top: 2px solid #c8cfea;
+}
+.mainMenu {
+  position: relative;
+  text-align: right;
+  margin: 0 10.9%;
+  padding: 0;
+  height: 0;
+  background-color: transparent;
+}
+.mainMenu .menuButton {
+  display: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #021799;
+  border: 1px solid #021799;
+  position: absolute;
+  right: 4.9%;
+  top: -70px;
+}
+.mainMenu .menuButton:hover {
+  color: #031fcb;
+  border: 1px solid #031fcb;
+  background-color: rgba(2, 23, 153, 0.1);
+}
+@media screen and (max-width: 620px) {
+  .mainMenu .menuButton {
+    display: block;
+  }
+}
+.mainMenu .menuItems {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  box-sizing: border-box;
+  transition: none 0;
+}
+.mainMenu .menuItems ul {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: block;
+}
+.mainMenu .menuItems ul li {
+  box-sizing: border-box;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.mainMenu .menuItems ul li a {
+  box-sizing: border-box;
+  color: #021799;
+  font-size: 1.2em;
+  text-decoration: none;
+  display: inline-block;
+  background-color: transparent;
+  background-position: right top;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 4px 0;
+}
+.mainMenu .menuItems ul li a span {
+  box-sizing: border-box;
+  display: inline-block;
+}
+.mainMenu .menuItems ul li a:hover {
+  color: #0320d5;
+  background-color: transparent;
+  text-decoration: none;
+}
+.mainMenu .menuItems ul li a.arrowIcon span:after {
+  content: url("resources/blank.gif");
+  display: inline-block;
+  padding-left: 8px;
+  vertical-align: baseline;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  background-image: url("resources/double-arrow-blue.svg");
+  background-size: 16px 16px;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+.mainMenu .menuItems ul li a.arrowIcon:hover span:after {
+  background-image: url("resources/double-arrow-blue.svg");
+}
+.mainMenu .menuItems ul li a.rssFeed span:after {
+  content: url("resources/blank.gif");
+  display: inline-block;
+  padding-left: 8px;
+  vertical-align: baseline;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  background-image: url("resources/rss-blue.svg");
+  background-size: 16px 16px;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+.mainMenu .menuItems ul li a.rssFeed:hover span:after {
+  background-image: url("resources/rss-blue.svg");
+}
+@media screen and (max-width: 620px) {
+  .mainMenu .menuItems ul li a {
+    width: 100%;
+    background-color: white;
+    padding: 16px 4.9%;
+  }
+  .mainMenu .menuItems ul li a:hover {
+    background-color: #edeff8;
+  }
+}
+@media screen and (max-width: 620px) {
+  .mainMenu .menuItems ul li {
+    border-bottom: 2px solid #c8cfea;
+  }
+}
+@media screen and (max-width: 620px) {
+  .mainMenu {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  .mainMenu .menuItems {
+    display: none;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+  }
+  .mainMenu.menuOpen {
+    height: auto;
+  }
+  .mainMenu.menuOpen .menuItems {
+    display: block;
+    position: relative;
+    right: auto;
+    bottom: auto;
   }
 }
 .entry + .entry {
