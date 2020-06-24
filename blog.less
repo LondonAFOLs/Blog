@@ -391,7 +391,7 @@ a{
 	h3{
 		.ContentHeader(1em, 1em);
 	}
-	
+
 	p{
 		font-weight: normal;
 		padding: 0 @widePageEdges;
@@ -408,7 +408,14 @@ a{
 			}
 		}
 	}
-	
+
+	> div.embed{
+		padding: 0 @widePageEdges;
+		@media screen and (max-width: @mobileWidth){
+			padding: 0 @narrowPageEdges;
+		}
+	}
+
 	img{
 		display: block;
 		width: 100%;
