@@ -17,6 +17,8 @@
 
 // Sizes
 
+@verySmallMobileWidth: 320px;
+@smallMobileWidth: 440px;
 @mobileWidth: 620px;
 @phabletWidth: 770px;
 @tabletWidth: 1024px;
@@ -36,26 +38,26 @@
 .ContentHeader(@headerFontSize, @headerSmallerFontSize)
 {
 	color: @darkerDeepBlueCol;
-		font-weight: 600;
-		font-size: @headerFontSize;
-		margin: 0.6em 0;
-		padding: 0 @widePageEdges;
-		a{
+	font-weight: 600;
+	font-size: @headerFontSize;
+	margin: 0.6em 0;
+	padding: 0 @widePageEdges;
+	a{
+		color: @darkerDeepBlueCol;
+		text-decoration: none;
+		&:visited{
 			color: @darkerDeepBlueCol;
-			text-decoration: none;
-			&:visited{
-				color: @darkerDeepBlueCol;
-			}
-			&:hover{
-				color: @deepBlueCol;
-				text-decoration: underline;
-			}
 		}
-		// Large phone
-		@media screen and (max-width: @mobileWidth){
-			font-size: @headerSmallerFontSize;
-			padding: 0 @narrowPageEdges;
+		&:hover{
+			color: @deepBlueCol;
+			text-decoration: underline;
 		}
+	}
+	// Large phone
+	@media screen and (max-width: @mobileWidth){
+		font-size: @headerSmallerFontSize;
+		padding: 0 @narrowPageEdges;
+	}
 }
 
 html{
@@ -78,7 +80,7 @@ body{
 	font-family: "Helvetica Neue", Helvetica Neue, sans-serif;
 	font-size: 0.76em;
 	font-weight: 400;
-	margin: 0px; 
+	margin: 0px;
 	padding: 0;
 	text-align: left;
 }
@@ -180,7 +182,7 @@ a{
 		}
 	}
 	// Large phone
-	@media screen and (max-width: @mobileWidth){
+	@media screen and (max-width: @mobileWidth) and (min-width: @smallMobileWidth){
 		height: (@headerHeight / 2);
 		background-size: cover;
 		background-position: ~"calc("@narrowPageEdges~" - 77px)" top;
@@ -207,7 +209,45 @@ a{
 				font-size: 0.9em;
 				margin: 0 0 4px 0;
 			}
-			
+
+		}
+	}
+	@media screen and (max-width: @smallMobileWidth){
+		height: (@headerHeight / 2);
+		background-size: cover;
+		background-position: ~"calc("@narrowPageEdges~" - 77px)" top;
+		.headerContent{
+			margin: 0 4.7%;
+		}
+		.logo{
+			width: (@logoWidth / 2);
+			height: (@logoHeight / 2);
+			top: (@logoTop / 2);
+			background-size: (@logoWidth / 2) (@logoHeight / 2);
+			background-image: url("resources/logo-110x66.png");
+		}
+		.headerTitleArea{
+			margin-left: ((@logoWidth / 2) + 8px);
+			margin-right: 70px;
+			padding-top: ((@logoTop / 2) + 26px);
+			h1{
+				display: block;
+				font-size: 1.4em;
+				margin: 0 0 4px 0;
+				line-height: 0.9em;
+			}
+		}
+		.headerContent{
+			a{
+				font-size: 0.9em;
+				margin: 0 0 4px 0;
+			}
+
+		}
+	}
+	@media screen and (max-width: @verySmallMobileWidth){
+		.headerTitleArea{
+			padding-top: ((@logoTop / 2) + 16px);
 		}
 	}
 	@media screen and (max-width: @mobileWidth) and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){
@@ -312,7 +352,7 @@ a{
 						span:after{
 							content: url("resources/blank.gif");
 							display: inline-block;
-							padding-left: 8px; 
+							padding-left: 8px;
 							vertical-align: baseline;
 							width: 16px;
 							height: 16px;
@@ -421,7 +461,7 @@ a{
 		width: 100%;
 		height: auto;
 	}
-	
+
 	.readMore, .blogHome{
 		display: inline-block;
 		line-height: 0.7em;
@@ -459,7 +499,7 @@ a{
 			background-repeat: no-repeat;
 		}
 	}
-	
+
 	.entryDate{
 		display: inline-block;
 		font-size: 0.7em;
@@ -561,7 +601,7 @@ a{
 			color: white;
 		}
 	}
-		// Large phone
+	// Large phone
 	@media screen and (max-width: @mobileWidth){
 		font-size: 1.1em;
 		line-height: 1.6em;

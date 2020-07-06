@@ -104,7 +104,7 @@ a:visited:hover {
     margin: 0 0 6px 0;
   }
 }
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 620px) and (min-width: 440px) {
   .header {
     height: 100px;
     background-size: cover;
@@ -131,6 +131,43 @@ a:visited:hover {
   .header .headerContent a {
     font-size: 0.9em;
     margin: 0 0 4px 0;
+  }
+}
+@media screen and (max-width: 440px) {
+  .header {
+    height: 100px;
+    background-size: cover;
+    background-position: calc( 4.9%  - 77px) top;
+  }
+  .header .headerContent {
+    margin: 0 4.7%;
+  }
+  .header .logo {
+    width: 104px;
+    height: 66px;
+    top: 15px;
+    background-size: 104px 66px;
+    background-image: url("resources/logo-110x66.png");
+  }
+  .header .headerTitleArea {
+    margin-left: 112px;
+    margin-right: 70px;
+    padding-top: 41px;
+  }
+  .header .headerTitleArea h1 {
+    display: block;
+    font-size: 1.4em;
+    margin: 0 0 4px 0;
+    line-height: 0.9em;
+  }
+  .header .headerContent a {
+    font-size: 0.9em;
+    margin: 0 0 4px 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header .headerTitleArea {
+    padding-top: 31px;
   }
 }
 @media screen and (max-width: 620px) and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
