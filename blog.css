@@ -404,6 +404,9 @@ a:visited:hover {
     padding: 0 4.9%;
   }
 }
+.entryContent ul {
+  padding: 0 10.9%;
+}
 .entryContent p {
   font-weight: normal;
   padding: 0 10.9%;
